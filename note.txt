@@ -1,0 +1,40 @@
+查询 AJAX
+1. index.jsp直接发送ajax请求进行员工分页数据的查询
+2. 服务器将查处的数据,以json字符串的形式返回给浏览器
+3. 浏览器收到js字符串,可以使用js对json进行解析,使用js通过dom增删改改变页面
+4. 返回json. 实现客户端的无关性
+
+
+URI:
+/emp/{id} GET查询员工
+/emp      POST保存员工
+/emp/{id} PUT 修改员工
+/emp/{id} DELETE删除员工
+
+新增
+jquery前端校验,ajax用户名重复校验,重要数据(后端校验(JSR303),唯一约束)
+
+总结
+UI: bootstrap
+发送请求给tomcat中的当前项目
+当前项目收到请求
+1. SpringMVC前端控制器来判断能否处理该请求，能处理则调用controller
+    不能则<mvc:deafult-servlet-handler> 交给tomcat(如静态资源)
+2. controller调用service层的业务逻辑
+3. service如果进行数据库的交互，则调用dao层
+4. dao层这些由mybatis逆向生成 xxxmapper
+    mapper方法不够用，可自行添加
+5. mapper操作数据库
+6. mapper之所以能用，因为spring的配置文件中，设置了自动扫描接口的package
+    即mapper的实现被扫描进入ioc容器中
+7. 结果最后再返回到UI
+
+大量使用ajax请求，结果返回的是json串，使用js解析json在页面显示
+
+maven来做依赖管理&构建
+
+注意点:
+1. 新增，修改，引入数据校验(前端+后端)
+2. 删除,单个&批量
+3. mybatis generator-xxMapper
+4. ajax. SpringMVC能很方便的用@ResponseBody来处理

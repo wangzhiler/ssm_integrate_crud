@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.qaqa</groupId>
+  <artifactId>ssm_integrate_crud</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>ssm_integrate_crud Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <!--<url>http://www.example.com</url>-->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <!--引入项目依赖的jar包-->
+    <!--SpringMVC、Spring-->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+
+    <!--Spring JDBC-->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+
+    <!--Spring面向切面编程-->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>5.0.7.RELEASE</version>
+    </dependency>
+
+    <!--mybatis-->
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.4.6</version>
+    </dependency>
+
+    <!--mybatis和spring 整合-->
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+
+
+    <!--数据库连接池、驱动-->
+    <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.5.2</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.11</version>
+    </dependency>
+
+    <!--jstl servlet-api junit-->
+    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.1.2</version>
+      </dependency>
+
+
+      <dependency>
+          <groupId>taglibs</groupId>
+          <artifactId>standard</artifactId>
+          <version>1.1.2</version>
+      </dependency>
+
+
+      <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <!--<scope>provided</scope>-->
+    </dependency>
+
+
+    <!--MBG-->
+    <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-maven-plugin -->
+    <dependency>
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-maven-plugin</artifactId>
+      <version>1.3.7</version>
+    </dependency>
+
+
+
+    <!--SpringTest-->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>4.3.18.RELEASE</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+
+
+    <!--引入pagehelper分页插件-->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>5.1.4</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.7</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+
+      <!--jackson-->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.9.6</version>
+      </dependency>
+
+      <!--数据校验-->
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>6.0.11.Final</version>
+      </dependency>
+
+
+  </dependencies>
+
+  <!--<build>-->
+    <!--<finalName>ssm_integrate_crud</finalName>-->
+    <!--<pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;-->
+      <!--<plugins>-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-clean-plugin</artifactId>-->
+          <!--<version>3.0.0</version>-->
+        <!--</plugin>-->
+        <!--&lt;!&ndash; see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging &ndash;&gt;-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-resources-plugin</artifactId>-->
+          <!--<version>3.0.2</version>-->
+        <!--</plugin>-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-compiler-plugin</artifactId>-->
+          <!--<version>3.7.0</version>-->
+        <!--</plugin>-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-surefire-plugin</artifactId>-->
+          <!--<version>2.20.1</version>-->
+        <!--</plugin>-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-war-plugin</artifactId>-->
+          <!--<version>3.2.0</version>-->
+        <!--</plugin>-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-install-plugin</artifactId>-->
+          <!--<version>2.5.2</version>-->
+        <!--</plugin>-->
+        <!--<plugin>-->
+          <!--<artifactId>maven-deploy-plugin</artifactId>-->
+          <!--<version>2.8.2</version>-->
+        <!--</plugin>-->
+      <!--</plugins>-->
+    <!--</pluginManagement>-->
+  <!--</build>-->
+</project>
