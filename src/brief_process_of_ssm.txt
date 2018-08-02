@@ -1,0 +1,35 @@
+1. maven配置
+
+2. web.xml
+    1). 启动Spring的容器，项目一启动就会加载的配置文件classpath下的applicationContext.xml
+        (web.xml中context-value的name+value 和 listener的contextLoaderListener)
+        (resources下建立applicationContext.xml)
+    2). 配置springmvc前端控制器
+        (web.xml中servlet和servlet-mapping)
+        (web同级目录下建立dispatcherServlet-servlet.xml)
+    3). web.xml中加上字符编码过滤器、rest风格的配置等过滤器 (filter filter-mapping)
+
+3. dispatcherServlet-servlet.xml
+    1). 扫描包下Controller注解的部分 <context>中 use-default-filters="false"
+    2). 配置试图解析器 InternalResourceViewResolver
+            property prefix、suffix
+    3). <mvc:default-servlet-handler/> 将mvc不能处理的请求交给tomcat
+        <mvc:annotation-driven> 支持更高级的功能 映射动态请求
+
+4. applicationContext.xml
+    1). 扫描包下Controller之外的部分
+    2). 数据源 (resources下建立dbconfig.properties)
+    3). 配置和mybatis的整合
+        (指定mybatis全局配置文件和mapper文件)
+        (resources下建立mybatis-config.xml)
+    4). 配置扫描器,因为mybatis接口是个代理对象 MapperScannerConfigurer 扫描所有dao接口加入ioc容器
+    5). 事务控制 DataSourceTransactionManager ref到数据源
+    6). 基于注解的事务/配置形式的事务 任意方法 参数任意多
+        <aop:pointcut id="txPoint" expression="execution(* com.qaqa.crud.service..*(..))"/>
+    7). 配置事务增强<tx:advice.../>
+    8). 配置mybatis-config.xml
+
+5. mbg
+    1). pom.xml同级 建立mbg.xml
+
+
